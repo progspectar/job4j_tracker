@@ -25,10 +25,6 @@ public class PointTest {
     @Test
     public void when42to71then3dot16() {
         double expected = 3.16;
-        int x1 = 4;
-        int y1 = 2;
-        int x2 = 7;
-        int y2 = 1;
         Point a = new Point(4, 2);
         Point b = new Point(7, 1);
         double out = a.distance(b);
