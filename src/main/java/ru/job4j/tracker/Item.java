@@ -4,10 +4,9 @@ import java.time.LocalDateTime;
 
 public class Item {
 
-    private int id;
-
-    private String name;
     private final LocalDateTime created = LocalDateTime.now();
+    private int id;
+    private String name;
 
     public Item() {
     }
