@@ -11,7 +11,6 @@ public class Library {
         books[1] = book2;
         books[2] = book3;
         books[3] = bookCC;
-
         for (int i = 0; i < books.length; i++) {
             Book bk = books[i];
             System.out.println(bk.getName() + " - " + bk.getNumber());
@@ -26,9 +25,10 @@ public class Library {
         System.out.println("Shown only books \"Clean Code\" ");
         for (int i = 0; i < books.length; i++) {
             Book bk = books[i];
-            if (bk.getName().equals(bookCC.getName())) {
+            if ("Clean Code".equals(bk.getName())) {
                 System.out.println(bk.getName() + " - " + bk.getNumber());
             }
         }
     }
 }
+
