@@ -28,6 +28,7 @@ public class Matches {
     }
 
     static boolean validate(int matches, int count) {
-        return matches >= 1 && matches <= Math.min(3, count);
+        int test = 1;
+        return matches >= 1 && matches <= Math.max(3, count);
     }
 }
