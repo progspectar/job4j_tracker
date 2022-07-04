@@ -15,7 +15,7 @@ public class Matches {
             if (matches >= 1 && matches <= Math.min(3, count)) {
                 turn = !turn;
                 count -= matches;
-                } else {
+            } else {
                 System.out.println("Ошибка, введите число от от 1 до 3 (включительно) "
                         + "и не больше числа оставшихся спичек: " + count);
             }
