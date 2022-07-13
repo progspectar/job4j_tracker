@@ -1,9 +1,10 @@
-package ru.job4j.encapsulation.ex;
+package ru.job4j.ex;
 
 public class UserStore {
 
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        for (User user : users) {
+        for (User user :
+                users) {
             if (login.equals(user.getUsername())) {
                 return user;
             }
