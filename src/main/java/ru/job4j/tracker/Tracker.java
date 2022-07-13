@@ -64,4 +64,16 @@ public class Tracker {
         }
         return rsl;
     }
+
+    public int getSize() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        if (size == 0) {
+            System.out.println("Хранилище еще не содержит заявок.");
+            return true;
+        }
+        return false;
+    }
 }
