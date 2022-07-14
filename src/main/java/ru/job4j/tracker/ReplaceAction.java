@@ -9,7 +9,6 @@ public class ReplaceAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
-        if (tracker.isEmpty()) return true;
         int id = input.askInt("Enter id: ");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
