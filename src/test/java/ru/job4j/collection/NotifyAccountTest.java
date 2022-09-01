@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 
 public class NotifyAccountTest {
     @Test
@@ -23,5 +24,22 @@ public class NotifyAccountTest {
                 )
         );
         assertThat(notifyAccount.sent(accounts)).containsAll(expect);
+    }
+
+    @Test
+    public void whenDuplicatesIsDeleted() {
+        NotifyAccount notifyAccount = new NotifyAccount();
+        HashSet<Account> accounts = NotifyAccount.sent(Arrays.asList(
+                new Account("111", "Petr Arsentev", "1"),
+                new Account("111", "Pavel Zotov", "2"),
+                new Account("222", "Pavel Zotov", "3")
+        ));
+        HashSet<Account> expect = new HashSet<Account>(
+                Arrays.asList(
+                        new Account("111", "Petr Arsentev", "1"),
+                        new Account("222", "Pavel Zotov", "3")
+                )
+        );
+        assertIterableEquals(accounts, expect);
     }
 }
