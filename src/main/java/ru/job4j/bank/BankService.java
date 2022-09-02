@@ -10,8 +10,12 @@ public class BankService {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         BankService that = (BankService) o;
         return Objects.equals(users, that.users);
     }
