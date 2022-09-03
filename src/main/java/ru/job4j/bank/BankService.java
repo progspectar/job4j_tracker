@@ -5,24 +5,7 @@ import java.util.*;
 public class BankService {
     private final Map<User, List<Account>> users = new HashMap<>();
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        BankService that = (BankService) o;
-        return Objects.equals(users, that.users);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(users);
-    }
-
-    public void addUser(User user) {
+     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<Account>());
     }
 
