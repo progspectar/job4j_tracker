@@ -5,7 +5,7 @@ import java.util.*;
 public class BankService {
     private final Map<User, List<Account>> users = new HashMap<>();
 
-    public void addUser(User user) {
+     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<Account>());
     }
 
