@@ -60,10 +60,7 @@ public class AnalyzeByMap {
         HashMap<String, Double> map = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                String key = subject.name();
-                Double value = map.get(key);
-                value = value == null ? 0D : value;
-                map.put(key, value + subject.score());
+                map.merge(subject.name(), (double) subject.score(), (prev, cur) -> prev + cur);
             }
         }
         for (Map.Entry<String, Double> entry : map.entrySet()) {
