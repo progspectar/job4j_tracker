@@ -30,7 +30,9 @@ public class Account {
     }
 
     /**
-     * @return возвращает реквизиты счета
+     * Метод возвращает реквизиты счета
+     *
+     * @return
      */
     public String getRequisite() {
         return requisite;
@@ -61,12 +63,6 @@ public class Account {
         this.balance = balance;
     }
 
-    /**
-     * переопределение метода, унаследованного от Object
-     *
-     * @param o
-     * @return
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -79,11 +75,6 @@ public class Account {
         return Objects.equals(requisite, account.requisite);
     }
 
-    /**
-     * переопределение метода, унаследованного от Object
-     *
-     * @return
-     */
     @Override
     public int hashCode() {
         return Objects.hash(requisite);

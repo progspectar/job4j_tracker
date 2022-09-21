@@ -61,12 +61,6 @@ public class User {
         this.username = username;
     }
 
-    /**
-     * переопределение метода, унаследованного от Object
-     *
-     * @param o
-     * @return
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -79,12 +73,6 @@ public class User {
         return Objects.equals(passport, user.passport);
     }
 
-    /**
-     * переопределение метода, унаследованного от Object
-     *
-     * @param o
-     * @return
-     */
     @Override
     public int hashCode() {
         return Objects.hash(passport);
