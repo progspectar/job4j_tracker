@@ -30,7 +30,7 @@ public class BankService {
      * Метод добавляет новый счет к пользователю
      *
      * @param passport номер паспорта пользователя
-     * @param account реквизиты банковского счета
+     * @param account  реквизиты банковского счета
      */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
@@ -49,12 +49,11 @@ public class BankService {
      * @return возвращает найденного пользователя или null, если пользователь не найден
      */
     public User findByPassport(String passport) {
-        for (User user : users.keySet()) {
-            if (passport.equals(user.getPassport())) {
-                return user;
-            }
-        }
-        return null;
+        return users.keySet()
+                .stream()
+                .filter(user -> user.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
     }
 
     /**
@@ -67,12 +66,11 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
         if (user != null) {
-            List<Account> accountList = getAccounts(user);
-            for (Account account : accountList) {
-                if (requisite.equals(account.getRequisite())) {
-                    return account;
-                }
-            }
+            return users.get(user)
+                    .stream()
+                    .filter(u -> u.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
         }
         return null;
     }
